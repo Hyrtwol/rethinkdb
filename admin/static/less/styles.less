@@ -2517,8 +2517,8 @@ TODO: retire this
                     padding-left: 0px;
                     .ionicon-table-status {
                         @icon-size: 25px;
-                        width: @icon-size;
-                        height: @icon-size;
+                        width: 24px;
+                        height: 20px;
                         margin-right: 5px;
                         transition-property: opacity, fill;
                         transition-duration: 1s, 1s;
@@ -2527,15 +2527,21 @@ TODO: retire this
                             transition-duration: 1s, 1s;
                         }
                         &.ready {
-                            fill: rgb(0, 200, 0);
+                            fill: rgb(109, 215, 109);
                         }
-                        &.partially-ready {
+                        &.reads-only {
                             fill: rgb(255, 140, 0);
                             .outer-ring {
                                 opacity: 0.5;
                             }
                         }
-                        &.not-ready {
+                        &.outdated-reads {
+                            fill: rgb(255, 140, 0);
+                            .outer-ring {
+                                fill: rgb(255, 200, 0);
+                            }
+                        }
+                        &.unavailable {
                             fill: rgb(255, 71, 71);
                             .outer-ring {
                                 opacity: 0.25;
@@ -2545,7 +2551,6 @@ TODO: retire this
                             }
                         }
                     }
-                    //background: left center no-repeat url('images/live-icon.png');
                 }
                 &.masters { background: left center no-repeat url('images/layers-icon.png'); }
                 &.replicas { background: left center no-repeat url('images/grid-icon.png'); }
